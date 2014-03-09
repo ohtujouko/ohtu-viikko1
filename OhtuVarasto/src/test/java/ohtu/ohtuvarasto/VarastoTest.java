@@ -79,20 +79,32 @@ public class VarastoTest {
     @Test
     public void lisaaNegatiivinenMaaraVarastoon () {
         varasto.lisaaVarastoon(-1);
+        
+        // saldon ei pitäisi muuttua 0:sta
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
     public void taytaVarastoYli() {
         varasto.lisaaVarastoon(varasto.paljonkoMahtuu()+1);
+        
+        // saldon pitäisi olla tilavuus, ts. varasto täynnä
+        assertEquals(varasto.getSaldo(), varasto.getTilavuus(), vertailuTarkkuus);
     }
     
     @Test
     public void otaNegatiivinenMaaraVarastosta () {
         varasto.otaVarastosta(-1);
+        
+        // saldon pitäisi olla yhä 0
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
     public void otaEnemmanKuinVarastossaOn () {
         varasto.otaVarastosta(varasto.getSaldo()+1);
+        
+        // saldon pitäisi olla yhä 0
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
 }
