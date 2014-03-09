@@ -1,4 +1,4 @@
 ohtu-viikko1
 ============
 
-Zzzz...
+Jenkins-url: http://ohtu.jamo.io/job/ohtujouko-viikko1/
