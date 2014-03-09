@@ -95,6 +95,7 @@ public class VarastoTest {
     @Test
     public void otaNegatiivinenMaaraVarastosta () {
         varasto.otaVarastosta(-1);
+        // lisätty turha kommentti tänne buildikoukun testausta varten
         
         // saldon pitäisi olla yhä 0
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
