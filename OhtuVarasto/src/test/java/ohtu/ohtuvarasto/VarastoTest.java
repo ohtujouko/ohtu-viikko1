@@ -75,4 +75,24 @@ public class VarastoTest {
         varasto = new Varasto(-1,-1);
         varasto.toString();
     }
+    
+    @Test
+    public void lisaaNegatiivinenMaaraVarastoon () {
+        varasto.lisaaVarastoon(-1);
+    }
+    
+    @Test
+    public void taytaVarastoYli() {
+        varasto.lisaaVarastoon(varasto.paljonkoMahtuu()+1);
+    }
+    
+    @Test
+    public void otaNegatiivinenMaaraVarastosta () {
+        varasto.otaVarastosta(-1);
+    }
+    
+    @Test
+    public void otaEnemmanKuinVarastossaOn () {
+        varasto.otaVarastosta(varasto.getSaldo()+1);
+    }
 }
